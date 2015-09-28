@@ -1,0 +1,2 @@
+module MacaddressesHelper
+end

@@ -1,0 +1,23 @@
+= form_for @macaddress, html: { class: "form form-horizontal macaddress" } do |f|
+  .form-group
+    = f.label :macid, class: 'control-label'
+    .controls
+      = f.text_field :macid, class: 'form-control', required: true
+    = error_span(@macaddress[:macid])
+  .form-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_field :description, class: 'form-control', required: true
+    = error_span(@macaddress[:description])
+  .form-group
+    = f.label :owner, class: 'control-label'
+    .controls
+      = f.text_field :owner, class: 'form-control', required: true
+    = error_span(@macaddress[:owner])
+  .form-group
+    = f.label :remarks, class: 'control-label'
+    .controls
+      = f.text_field :remarks, class: 'form-control', required: true
+    = error_span(@macaddress[:remarks])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), macaddresses_path, :class => 'btn btn-default'

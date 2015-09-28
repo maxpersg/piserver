@@ -1,0 +1,25 @@
+- model_class = Macaddress
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:macid) + ':'
+  %br
+  = @macaddress.macid
+%p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @macaddress.description
+%p
+  %strong= model_class.human_attribute_name(:owner) + ':'
+  %br
+  = @macaddress.owner
+%p
+  %strong= model_class.human_attribute_name(:remarks) + ':'
+  %br
+  = @macaddress.remarks
+
+
+= link_to t('.back', :default => t("helpers.links.back")), macaddresses_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_macaddress_path(@macaddress), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), macaddress_path(@macaddress), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
