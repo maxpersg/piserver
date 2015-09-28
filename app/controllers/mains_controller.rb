@@ -64,11 +64,14 @@ class MainsController < ApplicationController
   def poweroff
     python_cmd = "sudo /home/pi/Projects/maxapp/codesend/codesend 6642535".to_s
     system python_cmd
+    redirect_to mains_path
   end  
 
   def poweron
     python_cmd = "sudo /home/pi/Projects/maxapp/codesend/codesend 6642543".to_s
     system python_cmd
+    redirect_to mains_path
+
   end  
 
   private
